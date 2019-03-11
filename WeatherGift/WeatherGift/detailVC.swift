@@ -13,7 +13,6 @@ class detailVC: UIViewController {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
-    
     @IBOutlet weak var currentImage: UIImageView!
   
     var currentPage = 0
