@@ -23,8 +23,11 @@ class detailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateUserInterface()
-        
+        if currentPage != 0 {
+            self.locationsArray[currentPage].getWeather {
+                self.updateUserInterface()
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -37,6 +40,8 @@ class detailVC: UIViewController {
     func updateUserInterface() {
         locationLabel.text = locationsArray[currentPage].name
         dateLabel.text = locationsArray[currentPage].coordinates
+        temperatureLabel.text = locationsArray[currentPage].currentTemperature
+        summaryLabel.text = locationsArray[currentPage].dailySummary
     }
 }
 
@@ -45,7 +50,6 @@ extension detailVC : CLLocationManagerDelegate {
     func getLocation() {
         locationManager = CLLocationManager()
         locationManager.delegate = self
-        let status = CLLocationManager.authorizationStatus()
     }
     
     func handleLocationAuthorizationStatus (status : CLAuthorizationStatus) {
@@ -72,7 +76,6 @@ extension detailVC : CLLocationManagerDelegate {
         let currentLatitude = currentLocation.coordinate.latitude
         let currentLongitude = currentLocation.coordinate.longitude
         let currentCoordinates = "\(currentLatitude), \(currentLongitude)"
-        print(currentCoordinates)
         dateLabel.text = currentCoordinates
         geoCoder.reverseGeocodeLocation(currentLocation, completionHandler:
             { placemarks, error in
@@ -85,8 +88,9 @@ extension detailVC : CLLocationManagerDelegate {
                 }
                 self.locationsArray[0].name = place
                 self.locationsArray[0].coordinates = currentCoordinates
-                self.locationsArray[0].getWeather()
-                self.updateUserInterface()
+                self.locationsArray[0].getWeather {
+                    self.updateUserInterface()
+                }
         })
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
