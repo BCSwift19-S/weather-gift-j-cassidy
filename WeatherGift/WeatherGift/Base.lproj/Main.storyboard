@@ -83,7 +83,11 @@
         <!--pageVC-->
         <scene sceneID="6MW-T2-PVZ">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" title="pageVC" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="onI-aE-O5t" customClass="pageVC" customModule="WeatherGift" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" title="pageVC" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="onI-aE-O5t" customClass="pageVC" customModule="WeatherGift" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="6jl-bw-QZv" kind="presentation" identifier="ToListVC" id="EZF-8x-LXU"/>
+                    </connections>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eSI-Wi-b8c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="943" y="-417"/>
@@ -107,14 +111,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="3cV-L8-ZQ8" kind="unwind" identifier="ToPageVC" unwindAction="unwindFromListVCWithSender:" id="5JB-qR-11x"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dqg-VH-5GZ">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dqg-VH-5GZ">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Edit" id="nuP-fJ-8YU"/>
+                                    <barButtonItem title="Edit" id="nuP-fJ-8YU">
+                                        <connections>
+                                            <action selector="editBarButtonPressed:" destination="6jl-bw-QZv" id="pxE-lt-XrZ"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="qjn-sw-MSe"/>
                                     <barButtonItem systemItem="add" id="W6B-xp-Iv9"/>
                                 </items>
@@ -122,15 +132,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Dqg-VH-5GZ" firstAttribute="bottom" secondItem="oJj-U3-7Vc" secondAttribute="bottom" id="3pt-C6-SdO"/>
+                            <constraint firstItem="Dqg-VH-5GZ" firstAttribute="leading" secondItem="oJj-U3-7Vc" secondAttribute="leading" id="8Mx-bP-oaQ"/>
                             <constraint firstItem="YzC-aa-IcW" firstAttribute="leading" secondItem="oJj-U3-7Vc" secondAttribute="leading" id="JwY-xI-LXg"/>
                             <constraint firstItem="YzC-aa-IcW" firstAttribute="trailing" secondItem="oJj-U3-7Vc" secondAttribute="trailing" id="Ql1-H7-88f"/>
+                            <constraint firstItem="Dqg-VH-5GZ" firstAttribute="trailing" secondItem="oJj-U3-7Vc" secondAttribute="trailing" id="TQm-RI-ATe"/>
                             <constraint firstItem="YzC-aa-IcW" firstAttribute="top" secondItem="oJj-U3-7Vc" secondAttribute="top" id="en4-aW-Gg8"/>
                             <constraint firstItem="oJj-U3-7Vc" firstAttribute="bottom" secondItem="YzC-aa-IcW" secondAttribute="bottom" constant="44" id="lRQ-UZ-KkE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oJj-U3-7Vc"/>
                     </view>
+                    <connections>
+                        <outlet property="addBarButton" destination="W6B-xp-Iv9" id="xx2-fM-mpw"/>
+                        <outlet property="editBarButton" destination="nuP-fJ-8YU" id="LN7-e2-23h"/>
+                        <outlet property="tableView" destination="YzC-aa-IcW" id="wvR-Dr-ttF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DnE-ic-xkP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="3cV-L8-ZQ8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1746" y="133"/>
         </scene>

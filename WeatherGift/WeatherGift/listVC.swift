@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListVC: UIViewController {
+class listVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var editBarButton: UIBarButtonItem!
@@ -25,7 +25,7 @@ class ListVC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToPageVC" {
-            let destination = segue.destination as! PageVC
+            let destination = segue.destination as! pageVC
             currentPage = (tableView.indexPathForSelectedRow?.row)!
             destination.currentPage = currentPage
             destination.locationsArray = locationsArray
@@ -48,7 +48,7 @@ class ListVC: UIViewController {
     
 }
 
-extension ListVC: UITableViewDelegate, UITableViewDataSource{
+extension listVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return locationsArray.count
     }

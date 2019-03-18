@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PageVC: UIPageViewController {
+class pageVC: UIPageViewController {
     
     var currentPage = 0
     var locationsArray = ["Local City", "Boston, USA", "Philadelphia, USA", "Londa, UK"]
@@ -22,7 +22,7 @@ class PageVC: UIPageViewController {
         
         delegate = self
         dataSource = self
-        setViewControllers([createDetailVC(forPage: 0)], direction: .forward, animated: false, completion: nil)
+        setViewControllers([createdetailVC(forPage: 0)], direction: .forward, animated: false, completion: nil)
         
     }
     
@@ -54,7 +54,7 @@ class PageVC: UIPageViewController {
         let safeHeight = view.frame.height - view.safeAreaInsets.bottom
         listButton = UIButton(frame: CGRect(x: view.frame.width-barButtonWidth, y: safeHeight-barButtonHeight, width: barButtonWidth, height: barButtonHeight))
         listButton.setImage(UIImage(named: "listbutton"), for: .normal)
-        listButton.setImage(UIImage(named: "listbutton_highlighted"), for: .highlighted)
+        listButton.setImage(UIImage(named: "listbutton-highlighted"), for: .highlighted)
         listButton.addTarget(self, action: #selector(segueToListVC), for: .touchUpInside)
         view.addSubview(listButton)
         
@@ -67,7 +67,7 @@ class PageVC: UIPageViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToListVC" {
-            let destination = segue.destination as! ListVC
+            let destination = segue.destination as! listVC
             destination.locationsArray = locationsArray
             destination.currentPage = currentPage
             
@@ -77,14 +77,14 @@ class PageVC: UIPageViewController {
     @IBAction func unwindFromListVC(sender: UIStoryboardSegue) {
         pageControl.numberOfPages = locationsArray.count
         pageControl.currentPage = currentPage
-        setViewControllers([createDetailVC(forPage: currentPage)], direction: .forward, animated: false, completion: nil)
+        setViewControllers([createdetailVC(forPage: currentPage)], direction: .forward, animated: false, completion: nil)
     }
     
     //MARK:- Create view controller for UIPageViewController
-    func createDetailVC(forPage page: Int) -> DetailVC {
+    func createdetailVC(forPage page: Int) -> detailVC {
         currentPage = min(max(0, page), locationsArray.count-1)
         
-        let detailVC = storyboard!.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
+        let detailVC = storyboard!.instantiateViewController(withIdentifier: "VC") as! detailVC
         detailVC.locationsArray = locationsArray
         detailVC.currentPage = currentPage
         return detailVC
@@ -94,11 +94,11 @@ class PageVC: UIPageViewController {
 }
 
 
-extension PageVC: UIPageViewControllerDataSource, UIPageViewControllerDelegate{
+extension pageVC: UIPageViewControllerDataSource, UIPageViewControllerDelegate{
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        if let currentViewController = viewController as? DetailVC {
+        if let currentViewController = viewController as? detailVC {
             if currentViewController.currentPage < locationsArray.count-1 {
-                return createDetailVC(forPage: currentViewController.currentPage+1)
+                return createdetailVC(forPage: currentViewController.currentPage+1)
             }
             
         }
@@ -107,9 +107,9 @@ extension PageVC: UIPageViewControllerDataSource, UIPageViewControllerDelegate{
         
     }
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        if let currentViewController = viewController as? DetailVC {
+        if let currentViewController = viewController as? detailVC {
             if currentViewController.currentPage > 0 {
-                return createDetailVC(forPage: currentViewController.currentPage-1)
+                return createdetailVC(forPage: currentViewController.currentPage-1)
             }
         }
         return nil
@@ -117,19 +117,19 @@ extension PageVC: UIPageViewControllerDataSource, UIPageViewControllerDelegate{
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        if let currentViewController = pageViewController.viewControllers?[0] as? DetailVC {
+        if let currentViewController = pageViewController.viewControllers?[0] as? detailVC {
             pageControl.currentPage = currentViewController.currentPage
         }
     }
     
     
     @objc func pageControlPressed() {
-        if let currentViewController = self.viewControllers?[0] as? DetailVC {
+        if let currentViewController = self.viewControllers?[0] as? detailVC {
             currentPage = currentViewController.currentPage
             if pageControl.currentPage < currentPage {
-                setViewControllers([createDetailVC(forPage: pageControl.currentPage)], direction: .reverse, animated: true, completion: nil)
+                setViewControllers([createdetailVC(forPage: pageControl.currentPage)], direction: .reverse, animated: true, completion: nil)
             }else if pageControl.currentPage > currentPage {
-                setViewControllers([createDetailVC(forPage: pageControl.currentPage)], direction: .forward, animated: true, completion: nil)
+                setViewControllers([createdetailVC(forPage: pageControl.currentPage)], direction: .forward, animated: true, completion: nil)
             }
             
         }
