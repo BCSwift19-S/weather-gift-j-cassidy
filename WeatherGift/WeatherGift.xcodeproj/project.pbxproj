@@ -15,6 +15,7 @@
 		7125D87D2236F0490078C419 /* detailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7125D87C2236F0490078C419 /* detailVC.swift */; };
 		7125D87F2236F4810078C419 /* listVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7125D87E2236F4810078C419 /* listVC.swift */; };
 		7125D8812236F6970078C419 /* pageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7125D8802236F6970078C419 /* pageVC.swift */; };
+		7132335C223FBE8F0033D80A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7132335B223FBE8F0033D80A /* Constants.swift */; };
 		7175D137223FA76900FDFA25 /* WeatherLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7175D136223FA76900FDFA25 /* WeatherLocation.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		7125D87C2236F0490078C419 /* detailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailVC.swift; sourceTree = "<group>"; };
 		7125D87E2236F4810078C419 /* listVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listVC.swift; sourceTree = "<group>"; };
 		7125D8802236F6970078C419 /* pageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pageVC.swift; sourceTree = "<group>"; };
+		7132335B223FBE8F0033D80A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7175D136223FA76900FDFA25 /* WeatherLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLocation.swift; sourceTree = "<group>"; };
 		B35FB8A55EC92FA8B3592F26 /* Pods-WeatherGift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherGift.debug.xcconfig"; path = "Target Support Files/Pods-WeatherGift/Pods-WeatherGift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				7125D86A2236E3850078C419 /* AppDelegate.swift */,
+				7132335B223FBE8F0033D80A /* Constants.swift */,
 				7175D136223FA76900FDFA25 /* WeatherLocation.swift */,
 				7125D8802236F6970078C419 /* pageVC.swift */,
 				7125D87C2236F0490078C419 /* detailVC.swift */,
@@ -247,6 +250,7 @@
 				7125D8812236F6970078C419 /* pageVC.swift in Sources */,
 				7125D87F2236F4810078C419 /* listVC.swift in Sources */,
 				7125D87D2236F0490078C419 /* detailVC.swift in Sources */,
+				7132335C223FBE8F0033D80A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
