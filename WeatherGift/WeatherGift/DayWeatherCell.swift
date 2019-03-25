@@ -23,11 +23,11 @@ class DayWeatherCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
-    func update(with dailyForecast: WeatherLocation.DailyForecast, timeZone: String) {
+    
+    func update(with dailyForecast: WeatherDetail.DailyForecast, timeZone: String) {
         dayCellIcon.image = UIImage(named: dailyForecast.dailyIcon)
         dayCellSummary.text = dailyForecast.dailySummary
         dayCellMaxTemp.text = String(format: "%2.f", dailyForecast.dailyMaxTemp) + "°"
