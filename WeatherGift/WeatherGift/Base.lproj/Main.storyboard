@@ -127,7 +127,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="sTY-hs-3nu">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="sTY-hs-3nu" customClass="HourlyWeatherCell" customModule="WeatherGift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -165,8 +165,22 @@
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <connections>
+                                            <outlet property="hourlyIcon" destination="vf1-Cn-iLC" id="Lud-TI-dtf"/>
+                                            <outlet property="hourlyPrecipProb" destination="byy-PX-xQj" id="4FJ-gQ-10u"/>
+                                            <outlet property="hourlyTemp" destination="YEx-9H-SvR" id="OX6-Py-c2J"/>
+                                            <outlet property="hourlyTime" destination="Z6a-IH-4yQ" id="k6z-vD-Q5D"/>
+                                            <outlet property="rainDropImage" destination="pPs-2y-h5e" id="mDN-tT-DRF"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="hourlyIcon" destination="vf1-Cn-iLC" id="CUc-RE-mHN"/>
+                                    <outlet property="hourlyPrecipProb" destination="byy-PX-xQj" id="hWZ-Lc-PDf"/>
+                                    <outlet property="hourlyTemp" destination="YEx-9H-SvR" id="QVJ-WQ-ivc"/>
+                                    <outlet property="hourlyTime" destination="Z6a-IH-4yQ" id="ho1-IK-nlz"/>
+                                    <outlet property="raindropImage" destination="pPs-2y-h5e" id="RdT-EC-FEo"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

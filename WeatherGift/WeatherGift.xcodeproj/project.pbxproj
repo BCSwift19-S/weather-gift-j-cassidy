@@ -19,6 +19,7 @@
 		7175D137223FA76900FDFA25 /* WeatherLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7175D136223FA76900FDFA25 /* WeatherLocation.swift */; };
 		71F4800E22495B3C00E9BA5E /* DayWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4800D22495B3C00E9BA5E /* DayWeatherCell.swift */; };
 		71F48010224964F300E9BA5E /* TimeInterval+Format.swfit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4800F224964F300E9BA5E /* TimeInterval+Format.swfit.swift */; };
+		71F4801222496C7D00E9BA5E /* HourlyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4801122496C7D00E9BA5E /* HourlyWeatherCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		7175D136223FA76900FDFA25 /* WeatherLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLocation.swift; sourceTree = "<group>"; };
 		71F4800D22495B3C00E9BA5E /* DayWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayWeatherCell.swift; sourceTree = "<group>"; };
 		71F4800F224964F300E9BA5E /* TimeInterval+Format.swfit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Format.swfit.swift"; sourceTree = "<group>"; };
+		71F4801122496C7D00E9BA5E /* HourlyWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherCell.swift; sourceTree = "<group>"; };
 		B35FB8A55EC92FA8B3592F26 /* Pods-WeatherGift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherGift.debug.xcconfig"; path = "Target Support Files/Pods-WeatherGift/Pods-WeatherGift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +97,7 @@
 				7175D136223FA76900FDFA25 /* WeatherLocation.swift */,
 				7125D87C2236F0490078C419 /* detailVC.swift */,
 				71F4800D22495B3C00E9BA5E /* DayWeatherCell.swift */,
+				71F4801122496C7D00E9BA5E /* HourlyWeatherCell.swift */,
 				71F4800F224964F300E9BA5E /* TimeInterval+Format.swfit.swift */,
 				7125D8802236F6970078C419 /* pageVC.swift */,
 				7125D87E2236F4810078C419 /* listVC.swift */,
@@ -252,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71F4800E22495B3C00E9BA5E /* DayWeatherCell.swift in Sources */,
+				71F4801222496C7D00E9BA5E /* HourlyWeatherCell.swift in Sources */,
 				7175D137223FA76900FDFA25 /* WeatherLocation.swift in Sources */,
 				7125D86B2236E3850078C419 /* AppDelegate.swift in Sources */,
 				7125D8812236F6970078C419 /* pageVC.swift in Sources */,
